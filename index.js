@@ -17,7 +17,8 @@ app.get('/dni/:numero', async (req, res) => {
   }
 
   try {
-    const token = 'apis-token-15604.gu2HTAf1UueC3SG3KzwFpDAQDmepklBT';  // Tu token real aquí
+    const token = process.env.API_TOKEN;
+
 
     const response = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`, {
       headers: {
